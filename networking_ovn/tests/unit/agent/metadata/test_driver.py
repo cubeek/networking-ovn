@@ -13,15 +13,14 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import os
-
 import mock
-from oslo_config import cfg
-from oslo_utils import uuidutils
+import os
 
 from neutron.tests import base
 from neutron.tests import tools
 from neutron.tests.unit.agent.linux import test_utils
+from oslo_config import cfg
+from oslo_utils import uuidutils
 
 from networking_ovn.agent.metadata import agent as metadata_agent
 from networking_ovn.agent.metadata import driver as metadata_driver

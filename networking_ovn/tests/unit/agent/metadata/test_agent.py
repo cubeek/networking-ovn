@@ -13,8 +13,8 @@
 # limitations under the License.
 
 import collections
-
 import mock
+
 from neutron.agent.linux import ip_lib
 from neutron.agent.linux.ip_lib import IpAddrCommand as ip_addr
 from neutron.agent.linux.ip_lib import IpLinkCommand as ip_link

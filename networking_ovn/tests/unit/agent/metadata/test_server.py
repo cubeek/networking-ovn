@@ -13,8 +13,8 @@
 # limitations under the License.
 
 import collections
-
 import mock
+
 from neutron.agent.linux import utils as agent_utils
 from neutron.tests import base
 from oslo_config import cfg
