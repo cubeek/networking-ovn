@@ -375,3 +375,28 @@
       subnode:
         devstack_localrc:
           OVN_BRANCH: master
+
+- job:
+    name: networking-ovn-george
+    parent: devstack-minimal
+    description: This is George
+    required-projects:
+      - openstack/devstack
+      - openstack/networking-ovn
+    roles:
+      - zuul: openstack/devstack
+    pre-run: playbooks/george/configure_george_tests.yaml
+    run: playbooks/george/run_george_run.yaml
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^doc/.*$
+      - ^networking-ovn/locale/.*$
+      - ^releasenotes/.*$
+    vars:
+      devstack_services:
+        base: false
+      devstack_localrc:
+        USE_PYTHON3: true
+        INSTALL_TESTONLY_PACKAGES: true
+        DATABASE_PASSWORD: stackdb
+      tox_envlist: george

@@ -1,33 +1,34 @@
 - project:
-    templates:
-      - publish-openstack-docs-pti
-      - release-notes-jobs-python3
-      - check-requirements
-      - openstack-python3-ussuri-jobs-neutron
-      - openstack-lower-constraints-jobs-neutron
+    #    templates:
+    #      - publish-openstack-docs-pti
+    #      - release-notes-jobs-python3
+    #      - check-requirements
+    #      - openstack-python3-ussuri-jobs-neutron
+    #      - openstack-lower-constraints-jobs-neutron
     check:
       jobs:
-        - networking-ovn-tempest-dsvm-ovs-master:
-            voting: false
-        - networking-ovn-tempest-dsvm-ovs-release
-        - networking-ovn-rally-task
-        - networking-ovn-dsvm-functional
-        # TripleO jobs that deploy OVN.
-        # Note we don't use a project-template here, so it's easier
-        # to disable voting on one specific job if things go wrong.
-        # In Stein and beyond, fs010 will run using
-        # networking-ovn-tripleo-ci-centos-7-containers-multinode.
-        # If you need any support to debug these jobs in case of
-        # failures, please reach us on #tripleo IRC channel.
-        - networking-ovn-tripleo-ci-centos-7-containers-multinode
-        - networking-ovn-dsvm-grenade:
-            voting: false
-        - openstack-tox-cover:
-            required-projects:
-              - openstack/neutron
-        - networking-ovn-tempest-slow:
-            voting: false
-        - networking-ovn-tempest-full-multinode-ovs-master:
+          #        - networking-ovn-tempest-dsvm-ovs-master:
+          #            voting: false
+          #        - networking-ovn-tempest-dsvm-ovs-release
+          #        - networking-ovn-rally-task
+          #        - networking-ovn-dsvm-functional
+          #        # TripleO jobs that deploy OVN.
+          #        # Note we don't use a project-template here, so it's easier
+          #        # to disable voting on one specific job if things go wrong.
+          #        # In Stein and beyond, fs010 will run using
+          #        # networking-ovn-tripleo-ci-centos-7-containers-multinode.
+          #        # If you need any support to debug these jobs in case of
+          #        # failures, please reach us on #tripleo IRC channel.
+          #        - networking-ovn-tripleo-ci-centos-7-containers-multinode
+          #        - networking-ovn-dsvm-grenade:
+          #            voting: false
+          #        - openstack-tox-cover:
+          #            required-projects:
+          #              - openstack/neutron
+          #        - networking-ovn-tempest-slow:
+          #            voting: false
+          #        - networking-ovn-tempest-full-multinode-ovs-master:
+        - networking-ovn-george:
             voting: false
     gate:
       jobs:
